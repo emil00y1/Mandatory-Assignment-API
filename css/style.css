@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+/* HEADER STYLING */
+
+header {
+  background-color: rgb(27, 26, 26);
+  color: white;
+  padding-bottom: 1rem;
+
+  h1 {
+    padding: 1rem;
+    font-family: "Poppins";
+    font-weight: 600;
+  }
+
+  nav ul {
+    list-style: none;
+    gap: 2rem;
+    padding-inline: 1rem;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: rgb(243, 222, 190);
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .active {
+    color: rgb(243, 222, 190);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+}
+
+@media (min-width: 640px) {
+  header {
+    padding: 0;
+
+    nav ul {
+      display: flex;
+    }
+    li {
+      padding: 0;
+    }
+    a {
+      padding: 1rem 0.5rem;
+    }
+  }
+}
+
+/* MOVIE LIST STYLING */
+
+#movies_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#movies_list article {
+  margin: 2rem 1rem;
+  max-width: 768px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-block: 1rem;
+    max-height: 400px;
+  }
+  .overview {
+    margin-bottom: 1rem;
+  }
+
+  .emph_text {
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 640px) {
+  #movies_list article {
+    margin-block: 2.5rem;
+    > div {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      gap: 1rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      max-height: 400px;
+    }
+    div section {
+      margin-right: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    section > div {
+      margin-top: auto;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+/* PAGINATION */
+
+#pagination {
+  display: grid;
+  place-content: center;
+  margin-block: 1rem;
+  padding-block: 1rem;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .prev_page img {
+    transform: rotate(180deg);
+  }
+  li a {
+    padding: 1rem 2rem;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    text-decoration: none;
+    transition: 0.175s ease-in-out;
+  }
+  li a:hover {
+    background-color: rgb(187, 168, 139);
+    color: rgb(33, 33, 33);
+    transition: 0.175s ease-in-out;
+  }
+}
+
+.results {
+  display: grid;
+  place-content: center;
+}
